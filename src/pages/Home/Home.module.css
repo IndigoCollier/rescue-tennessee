@@ -1,0 +1,45 @@
+/* ============================================
+   HOME PAGE
+   ============================================ */
+
+.home {
+  /* No additional styles needed - sections have their own backgrounds */
+}
+
+/* ========== MIDDLE SECTIONS WRAPPER ========== */
+
+.middleSectionsWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.pawPrint {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(135deg);
+  width: 1800px;
+  height: 1800px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Responsive sizing for mobile devices */
+@media (max-width: 768px) {
+  .pawPrint {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pawPrint {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+/* Optional: Add smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}

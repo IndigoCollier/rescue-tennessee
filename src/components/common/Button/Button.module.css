@@ -1,0 +1,163 @@
+/* ============================================
+   BUTTON COMPONENT - LGF INSPIRED
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-lg);
+  font-family: var(--font-serif);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-base);
+  line-height: var(--leading-tight);
+  transition: all var(--transition-fast);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--color-soft-green);
+  outline-offset: 2px;
+}
+
+/* ========== VARIANTS ========== */
+
+/* Primary - Expanding Circle Button with Rust Palette */
+.btn-primary {
+  cursor: pointer;
+  position: relative;
+  padding: 10px 24px;
+  font-size: 18px;
+  color: var(--color-rust-red);
+  border: 3px solid var(--color-rust-red);
+  border-radius: 34px;
+  background-color: transparent;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  overflow: hidden;
+  font-family: var(--font-serif);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 80px;
+  height: 80px;
+  border-radius: inherit;
+  scale: 0;
+  z-index: -1;
+  background-color: var(--color-rust-red);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.btn-primary:hover:not(.btn-disabled)::before {
+  scale: 15;
+}
+
+.btn-primary:hover:not(.btn-disabled) {
+  color: var(--color-ivory);
+  scale: 1.1;
+  box-shadow: 0 0px 20px rgba(184, 84, 80, 0.4);
+}
+
+.btn-primary:active:not(.btn-disabled) {
+  scale: 1;
+}
+
+/* Secondary - Supporting actions */
+.btn-secondary {
+  background-color: var(--color-charcoal);
+  color: var(--color-ivory);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:hover:not(.btn-disabled) {
+  background-color: #4A4A4A;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Outline - Tertiary actions */
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-charcoal);
+  border-color: var(--color-charcoal);
+}
+
+.btn-outline:hover:not(.btn-disabled) {
+  background-color: var(--color-charcoal);
+  color: var(--color-ivory);
+  transform: translateY(-2px);
+}
+
+/* Donate - Special donation CTA (warm gradient) */
+.btn-donate {
+  background: linear-gradient(135deg, var(--color-rust-red), var(--color-soft-green));
+  color: var(--color-ivory);
+  box-shadow: 0 4px 14px 0 rgba(184, 84, 80, 0.3);
+  font-weight: var(--font-bold);
+}
+
+.btn-donate:hover:not(.btn-disabled) {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 20px 0 rgba(184, 84, 80, 0.4);
+}
+
+/* External - Links to organization sites */
+.btn-external {
+  background-color: var(--color-soft-green);
+  color: var(--color-ivory);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-external:hover:not(.btn-disabled) {
+  background-color: #6FA057;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ========== SIZES ========== */
+
+.btn-sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+}
+
+.btn-md {
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--text-base);
+}
+
+.btn-lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--text-lg);
+}
+
+/* ========== MODIFIERS ========== */
+
+.btn-full {
+  width: 100%;
+}
+
+.btn-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.icon svg {
+  width: 1.25em;
+  height: 1.25em;
+}

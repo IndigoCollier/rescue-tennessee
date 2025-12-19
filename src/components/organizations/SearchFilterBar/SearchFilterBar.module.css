@@ -1,0 +1,169 @@
+/* ============================================
+   SEARCH & FILTER BAR
+   ============================================ */
+
+.filterBar {
+  background-color: transparent;
+  position: relative;
+  z-index: 50;
+  padding: var(--space-6) 0;
+}
+
+.container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.filterControls {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ========== SEARCH INPUT ========== */
+
+.searchWrapper {
+  position: relative;
+  flex: 1;
+  min-width: 250px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  padding: var(--space-3) var(--space-3) var(--space-3) var(--space-10);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-charcoal);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-rust-red);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--color-soft-green);
+  box-shadow: 0 0 0 3px rgba(127, 176, 105, 0.1);
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-light);
+}
+
+/* ========== SELECT DROPDOWNS ========== */
+
+.selectWrapper {
+  position: relative;
+  min-width: 200px;
+}
+
+.selectIcon {
+  position: absolute;
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-secondary);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.select {
+  width: 100%;
+  padding: var(--space-3) var(--space-3) var(--space-3) var(--space-10);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-charcoal);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-rust-red);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23363636' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-3) center;
+  padding-right: var(--space-8);
+}
+
+.select:focus {
+  outline: none;
+  border: 2px solid var(--color-rust-red);
+  box-shadow: 0 0 0 3px rgba(127, 176, 105, 0.1);
+}
+
+.select:hover {
+  border-color: var(--color-soft-green);
+}
+
+/* ========== CLEAR FILTERS BUTTON ========== */
+
+.clearButton {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-white);
+  background-color: var(--color-rust-red);
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.clearButton:hover {
+  background-color: #a04440;
+  transform: scale(1.02);
+}
+
+.clearButton:active {
+  transform: scale(0.98);
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .filterBar {
+    top: 65px; /* Adjust for smaller header on mobile */
+  }
+
+  .filterControls {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .searchWrapper,
+  .selectWrapper {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .clearButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .filterBar {
+    padding: var(--space-4) 0;
+  }
+
+  .container {
+    padding: 0 var(--space-4);
+  }
+}

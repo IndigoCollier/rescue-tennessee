@@ -1,0 +1,200 @@
+/* ============================================
+   HEADER COMPONENT - ENHANCED WITH MOBILE MENU
+   ============================================ */
+
+.header {
+  background-color: var(--color-soft-green);
+  padding: var(--space-4) 0;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ========== LOGO ========== */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.logoImage {
+  height: 50px;
+  width: 50px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  transition: transform var(--transition-fast);
+}
+
+.logo:hover .logoImage {
+  transform: scale(1.05);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.logo h1 {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  color: var(--color-ivory);
+  margin: 0;
+  transition: color var(--transition-fast);
+}
+
+.logo:hover h1 {
+  color: var(--color-rust-red);
+}
+
+.tagline {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: var(--color-warm-cream);
+  font-weight: var(--font-light);
+}
+
+/* ========== DESKTOP NAVIGATION ========== */
+
+.nav {
+  display: flex;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.navLink {
+  color: var(--color-ivory);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-rust-red);
+  transition: width var(--transition-fast);
+}
+
+.navLink:hover {
+  color: var(--color-rust-red);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* ========== MOBILE MENU BUTTON ========== */
+
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-ivory);
+  cursor: pointer;
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.mobileMenuButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menuIcon {
+  width: 28px;
+  height: 28px;
+}
+
+/* ========== MOBILE NAVIGATION ========== */
+
+.mobileNav {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background-color: var(--color-text-primary);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideDown 0.3s ease-out;
+}
+
+.mobileNavLink {
+  color: var(--color-ivory);
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.mobileNavLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-rust-red);
+  padding-left: var(--space-4);
+}
+
+/* ========== ANIMATIONS ========== */
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+
+@media (max-width: 768px) {
+  /* Hide desktop nav, show mobile menu button */
+  .nav {
+    display: none;
+  }
+
+  .mobileMenuButton {
+    display: block;
+  }
+
+  .mobileNav {
+    display: flex;
+  }
+
+  .logo h1 {
+    font-size: var(--text-xl);
+  }
+
+  .tagline {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--space-3);
+  }
+
+  .logo h1 {
+    font-size: var(--text-lg);
+  }
+}

@@ -1,0 +1,140 @@
+/* ============================================
+   HERO SECTION - FULL WIDTH CENTERED WITH VIDEO
+   Design: Gradient blends from video into TrustSignals section
+   Inspired by: LGF site gradient transitions
+   ============================================ */
+
+.hero {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ========== BACKGROUND ========== */
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Overlay creates smooth gradient blend from video into charcoal section below */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Warm gradient: subtle rust tint at top, transitions to charcoal at bottom */
+  background: linear-gradient(
+    180deg,
+    rgba(184, 84, 80, 0.15) 0%,
+    rgba(54, 54, 54, 0.3) 30%,
+    rgba(54, 54, 54, 0.6) 70%,
+    rgba(54, 54, 54, 0.85) 95%,
+    #363636 100%
+  );
+  z-index: 2;
+}
+
+/* Hero Video */
+.heroVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* ========== HERO CONTENT ========== */
+
+.heroContent {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 var(--space-6);
+}
+
+/* Headline */
+.headline {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-4xl), 6vw, var(--text-5xl));
+  font-weight: var(--font-bold);
+  color: var(--color-white);
+  margin: 0 0 var(--space-4) 0;
+  line-height: var(--leading-tight);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Subheadline */
+.subheadline {
+  font-family: var(--font-sans);
+  font-size: var(--text-xl);
+  color: var(--color-white);
+  margin: 0 0 var(--space-8) 0;
+  line-height: var(--leading-relaxed);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* CTA Button */
+.ctaButton {
+  min-width: 280px;
+  letter-spacing: 0.5px;
+}
+
+/* Increase scale for wider hero button */
+.ctaButton::before {
+  width: 80px !important;
+  height: 80px !important;
+}
+
+.ctaButton:hover::before {
+  scale: 8 !important;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 500px;
+  }
+
+  .headline {
+    font-size: var(--text-3xl);
+  }
+
+  .subheadline {
+    font-size: var(--text-lg);
+  }
+
+  .ctaButton {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 450px;
+  }
+
+  .headline {
+    font-size: var(--text-2xl);
+  }
+
+  .subheadline {
+    font-size: var(--text-base);
+  }
+
+  .heroContent {
+    padding: 0 var(--space-4);
+  }
+}

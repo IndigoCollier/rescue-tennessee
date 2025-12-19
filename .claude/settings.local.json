@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/indig/Desktop/DevShop/Donation-App/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

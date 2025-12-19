@@ -1,0 +1,123 @@
+/* ============================================
+   TRUST SIGNALS - WHY CHOOSE SECTION
+   Design: Warm rust/orange gradient like LGF
+   Circular icons with colored squares inside
+   ============================================ */
+
+.trustSignals {
+  /* Warm gradient background - blends from hero */
+  background: linear-gradient(
+    180deg,
+    #B85450 0%,
+    #D4816F 50%,
+    #E8A87C 100%
+  );
+  padding: var(--space-20) 0;
+  position: relative;
+}
+
+.container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* ========== SECTION TITLE ========== */
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
+  font-weight: var(--font-bold);
+  color: var(--color-white);
+  text-align: center;
+  margin: 0 0 var(--space-12) 0;
+}
+
+/* ========== GRID ========== */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+/* ========== SIGNAL CARD ========== */
+
+.signalCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-6);
+}
+
+/* Circular Icon with colored square inside */
+.iconCircle {
+  width: 120px;
+  height: 120px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.iconSquare {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-sm);
+}
+
+/* Text Content */
+.title {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-white);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0 0 var(--space-4) 0;
+  line-height: var(--leading-tight);
+}
+
+.description {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.95);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+  max-width: 280px;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .trustSignals {
+    padding: var(--space-16) 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  .sectionTitle {
+    font-size: var(--text-2xl);
+  }
+
+  .iconCircle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .iconSquare {
+    width: 40px;
+    height: 40px;
+  }
+}

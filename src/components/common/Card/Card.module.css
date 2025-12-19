@@ -1,0 +1,63 @@
+/* ============================================
+   CARD COMPONENT - LGF ROUNDED STYLE
+   ============================================ */
+
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-2xl); /* LGF large rounded corners (24px) */
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+/* ========== VARIANTS ========== */
+
+.card-default {
+  /* Standard card - no extra styling */
+}
+
+.card-hover {
+  /* Interactive card with hover effects */
+  cursor: pointer;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.card-highlighted {
+  /* Special highlighted card (e.g., featured organization) */
+  border: 2px solid var(--color-rust-red);
+}
+
+/* ========== MODIFIERS ========== */
+
+.card-padding {
+  padding: var(--space-6);
+}
+
+.card-shadow {
+  box-shadow: var(--shadow-md);
+}
+
+.card-clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.card-clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .card-padding {
+    padding: var(--space-4);
+  }
+
+  .card {
+    border-radius: var(--radius-xl); /* Slightly smaller on mobile */
+  }
+}

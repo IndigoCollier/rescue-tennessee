@@ -1,0 +1,169 @@
+/* ============================================
+   FOOTER COMPONENT - ENHANCED
+   ============================================ */
+
+.footer {
+  background-color: var(--color-charcoal);
+  color: var(--color-ivory);
+  padding: var(--space-12) 0 var(--space-4);
+}
+
+.container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+/* ========== SECTIONS ========== */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Brand Section */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.logoImage {
+  height: 40px;
+  width: 40px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+.brandIcon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-rust-red);
+}
+
+.brand h3 {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  color: var(--color-ivory);
+  margin: 0;
+}
+
+.tagline {
+  font-size: var(--text-sm);
+  color: var(--color-warm-cream);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-soft-green);
+  margin-top: var(--space-2);
+}
+
+/* Links Section */
+.section h4 {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  color: var(--color-rust-red);
+  margin: 0 0 var(--space-3) 0;
+  font-weight: var(--font-semibold);
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.link {
+  color: var(--color-warm-cream);
+  font-size: var(--text-base);
+  transition: all var(--transition-fast);
+  padding-left: 0;
+}
+
+.link:hover {
+  color: var(--color-rust-red);
+  padding-left: var(--space-2);
+}
+
+/* Contact Info */
+.contactInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.attribution {
+  font-size: var(--text-xs);
+  color: var(--color-text-light);
+  margin-top: var(--space-4);
+  line-height: var(--leading-relaxed);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ========== BOTTOM COPYRIGHT ========== */
+
+.bottom {
+  text-align: center;
+  padding-top: var(--space-8);
+  margin-top: var(--space-8);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bottom p {
+  font-size: var(--text-sm);
+  color: var(--color-warm-cream);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.heartIcon {
+  color: var(--color-rust-red);
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .brand h3 {
+    font-size: var(--text-xl);
+  }
+
+  .section h4 {
+    font-size: var(--text-base);
+  }
+
+  .bottom p {
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+}
