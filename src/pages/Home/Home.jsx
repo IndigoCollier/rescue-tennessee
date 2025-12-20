@@ -2,13 +2,14 @@ import React from 'react'
 import HeroSection from '../../components/home/HeroSection'
 import HowDoIHelp from '../../components/home/HowDoIHelp'
 import FeaturedOrganizations from '../../components/home/FeaturedOrganizations'
+import Testimonials from '../../components/home/Testimonials'
 import WhyChoose from '../../components/home/WhyChoose'
 import styles from './Home.module.css'
 
 /**
  * Home Page
  * Landing page following wireframe design
- * Order: Hero → How Do I Help? → Featured Organizations → Why Choose
+ * Order: Hero → How Do I Help? → Featured Organizations → Testimonials → Why Choose
  */
 function Home() {
   return (
@@ -29,6 +30,8 @@ function Home() {
         <HowDoIHelp />
         <FeaturedOrganizations />
       </div>
+
+      <Testimonials />
 
       <WhyChoose />
     </div>

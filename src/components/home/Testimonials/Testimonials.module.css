@@ -1,0 +1,216 @@
+/* ============================================
+   TESTIMONIALS SECTION
+   ============================================ */
+
+.testimonials {
+  position: relative;
+  padding: var(--space-20) 0 var(--space-24) 0;
+  margin-top: -1px;
+  overflow: hidden;
+  border-radius: 3rem 3rem 0 0;
+  background: #363636;
+}
+
+/* Background Image */
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: #363636 url('/dog-tag-background.jpg') center/cover no-repeat;
+  border-radius: 3rem 3rem 0 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.5) 35%,
+      rgba(54, 54, 54, 0.75) 55%,
+      rgba(45, 61, 45, 0.9) 70%,
+      rgba(45, 61, 45, 0.98) 85%,
+      #2d3d2d 95%,
+      #2d3d2d 100%
+    );
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-lg);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* ========== SECTION HEADER ========== */
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-4xl), 5vw, var(--text-5xl));
+  font-weight: var(--font-bold);
+  color: var(--color-ivory);
+  text-align: center;
+  margin-bottom: var(--space-3);
+}
+
+.sectionSubtitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  color: var(--color-ivory);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--space-12);
+  opacity: 0.9;
+}
+
+/* ========== TESTIMONIAL CARD (SINGLE, CENTERED) ========== */
+
+.testimonialCard {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10);
+  box-shadow: var(--shadow-xl);
+  max-width: 800px;
+  margin: 0 auto var(--space-8);
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Fade Animations */
+.fadeIn {
+  opacity: 1;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+/* ========== QUOTE ICON ========== */
+
+.quoteIcon {
+  color: var(--color-soft-green);
+  margin: 0 auto var(--space-6);
+  opacity: 0.8;
+}
+
+/* ========== QUOTE TEXT ========== */
+
+.quote {
+  font-family: var(--font-sans);
+  font-size: var(--text-2xl);
+  line-height: var(--leading-relaxed);
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-8);
+  font-style: italic;
+  font-weight: var(--font-medium);
+}
+
+/* ========== AUTHOR INFO ========== */
+
+.author {
+  border-top: 2px solid var(--color-warm-cream);
+  padding-top: var(--space-4);
+}
+
+.name {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-charcoal);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.location {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* ========== INDICATOR DOTS ========== */
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(1.2);
+}
+
+.activeDot {
+  background: var(--color-ivory);
+  width: 14px;
+  height: 14px;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .testimonials {
+    padding: var(--space-16) 0;
+  }
+
+  .testimonialCard {
+    padding: var(--space-8);
+  }
+
+  .quote {
+    font-size: var(--text-xl);
+  }
+
+  .sectionSubtitle {
+    margin-bottom: var(--space-8);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  .sectionTitle {
+    font-size: var(--text-3xl);
+  }
+
+  .sectionSubtitle {
+    font-size: var(--text-base);
+  }
+
+  .testimonialCard {
+    padding: var(--space-6);
+  }
+
+  .quote {
+    font-size: var(--text-lg);
+  }
+
+  .name {
+    font-size: var(--text-base);
+  }
+
+  .location {
+    font-size: var(--text-sm);
+  }
+}
