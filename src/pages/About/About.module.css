@@ -710,27 +710,27 @@
   }
 
   .valueItem:nth-child(1) {
-    top: 140px;
-    left: 20px;
-    transform: rotate(-15deg);
+    top: 140px !important;
+    left: 20px !important;
+    transform: rotate(-15deg) !important;
   }
 
   .valueItem:nth-child(2) {
-    top: 10px;
-    left: 140px;
-    transform: rotate(-5deg);
+    top: 130px !important;
+    left: 200px !important;
+    transform: rotate(-5deg) !important;
   }
 
   .valueItem:nth-child(3) {
-    top: 10px;
-    right: 140px;
-    transform: rotate(5deg);
+    top: 130px !important;
+    right: 180px !important;
+    transform: rotate(5deg) !important;
   }
 
   .valueItem:nth-child(4) {
-    top: 140px;
-    right: 20px;
-    transform: rotate(15deg);
+    top: 260px !important;
+    right: 20px !important;
+    transform: rotate(15deg) !important;
   }
 
   .valueCircle {

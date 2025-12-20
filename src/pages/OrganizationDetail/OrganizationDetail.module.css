@@ -602,6 +602,8 @@
   .heroActions {
     flex-direction: column;
     width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
   }
 
   .heroActions button,
@@ -626,6 +628,11 @@
 @media (max-width: 480px) {
   .container {
     padding: 0 var(--space-4);
+  }
+
+  .heroActions {
+    max-width: 85%;
+    padding: 0 var(--space-2);
   }
 
   .section,
