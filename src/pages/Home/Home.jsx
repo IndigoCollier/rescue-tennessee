@@ -1,4 +1,5 @@
 import React from 'react'
+import SEO from '../../components/common/SEO'
 import HeroSection from '../../components/home/HeroSection'
 import HowDoIHelp from '../../components/home/HowDoIHelp'
 import FeaturedOrganizations from '../../components/home/FeaturedOrganizations'
@@ -13,8 +14,13 @@ import styles from './Home.module.css'
  */
 function Home() {
   return (
-    <div className={styles.home}>
-      <HeroSection />
+    <>
+      <SEO
+        title="Home"
+        description="Connect with verified Tennessee dog rescue organizations. 100% of donations go directly to rescues helping dogs in need."
+      />
+      <div className={styles.home}>
+        <HeroSection />
 
       {/* Wrapper for middle sections with paw print */}
       <div className={styles.middleSectionsWrapper}>
@@ -34,7 +40,8 @@ function Home() {
       <Testimonials />
 
       <WhyChoose />
-    </div>
+      </div>
+    </>
   )
 }
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Mail, Phone, MapPin, Send } from 'lucide-react'
+import SEO from '../../components/common/SEO'
 import Button from '../../components/common/Button'
 import styles from './Contact.module.css'
 
@@ -91,8 +92,13 @@ function Contact() {
   }
 
   return (
-    <div className={styles.contact}>
-      {/* Paw print background */}
+    <>
+      <SEO
+        title="Contact Us"
+        description="Have questions? Get in touch with Rescue Tennessee. We're here to help you connect with local dog rescue organizations."
+      />
+      <div className={styles.contact}>
+        {/* Paw print background */}
       <svg className={styles.pawPrint} viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
         <ellipse cx="100" cy="130" rx="45" ry="50" fill="#7FB069" opacity="0.25" stroke="#7FB069" strokeOpacity="0.65" strokeWidth="3" />
         <ellipse cx="40" cy="80" rx="20" ry="28" fill="#7FB069" opacity="0.25" stroke="#7FB069" strokeOpacity="0.65" strokeWidth="2.5" transform="rotate(-25 40 80)" />
@@ -255,7 +261,8 @@ function Contact() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }
 

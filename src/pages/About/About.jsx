@@ -1,5 +1,6 @@
 import React from 'react'
 import { Heart, Target, Eye } from 'lucide-react'
+import SEO from '../../components/common/SEO'
 import Button from '../../components/common/Button'
 import styles from './About.module.css'
 
@@ -12,8 +13,13 @@ function About() {
   ]
 
   return (
-    <div className={styles.about}>
-      {/* Paw print background */}
+    <>
+      <SEO
+        title="About Us"
+        description="Learn about our mission to connect donors with Tennessee rescue organizations. Every paw deserves a chance at a loving home."
+      />
+      <div className={styles.about}>
+        {/* Paw print background */}
       <svg className={styles.pawPrint} viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
         <ellipse cx="100" cy="130" rx="45" ry="50" fill="#7FB069" opacity="0.25" stroke="#7FB069" strokeOpacity="0.65" strokeWidth="3" />
         <ellipse cx="40" cy="80" rx="20" ry="28" fill="#7FB069" opacity="0.25" stroke="#7FB069" strokeOpacity="0.65" strokeWidth="2.5" transform="rotate(-25 40 80)" />
@@ -122,7 +128,8 @@ function About() {
 
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }
 

@@ -1,4 +1,6 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
+import SEO from '../../components/common/SEO'
+import Loading from '../../components/common/Loading'
 import SearchFilterBar from '../../components/organizations/SearchFilterBar'
 import OrganizationCard from '../../components/organizations/OrganizationCard'
 import NoResults from '../../components/organizations/NoResults'
@@ -10,9 +12,16 @@ import styles from './Organizations.module.css'
  * Displays all rescue organizations with search and filter capabilities
  */
 function Organizations() {
+  const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
   const [locationFilter, setLocationFilter] = useState('all')
   const [categoryFilter, setCategoryFilter] = useState('all')
+
+  // Simulate initial data loading
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 800)
+    return () => clearTimeout(timer)
+  }, [])
 
   // Filter organizations based on search and filters
   const filteredOrganizations = useMemo(() => {
@@ -41,9 +50,18 @@ function Organizations() {
 
   const hasActiveFilters = searchTerm !== '' || locationFilter !== 'all' || categoryFilter !== 'all'
 
+  if (loading) {
+    return <Loading />
+  }
+
   return (
-    <div className={styles.organizationsPage}>
-      {/* Paw print background for entire page */}
+    <>
+      <SEO
+        title="Find Organizations"
+        description="Browse 7+ verified dog rescue organizations across Tennessee. Find the perfect rescue to support in your community."
+      />
+      <div className={styles.organizationsPage}>
+        {/* Paw print background for entire page */}
       <svg className={styles.pawPrint} viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
         <ellipse cx="100" cy="130" rx="45" ry="50" fill="#7FB069" opacity="0.25" stroke="#7FB069" strokeOpacity="0.65" strokeWidth="3" />
         <ellipse cx="40" cy="80" rx="20" ry="28" fill="#7FB069" opacity="0.25" stroke="#7FB069" strokeOpacity="0.65" strokeWidth="2.5" transform="rotate(-25 40 80)" />
@@ -96,7 +114,8 @@ function Organizations() {
           )}
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

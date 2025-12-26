@@ -1,5 +1,6 @@
 import React from 'react'
 import { Users, Heart, TrendingUp } from 'lucide-react'
+import SEO from '../../components/common/SEO'
 import Button from '../../components/common/Button'
 import styles from './HowItWorks.module.css'
 
@@ -11,8 +12,13 @@ function HowItWorks() {
   ]
 
   return (
-    <div className={styles.howItWorks}>
-      {/* Hero Header */}
+    <>
+      <SEO
+        title="How It Works"
+        description="Discover how to support Tennessee dog rescues. Browse organizations, learn their stories, and donate directly with 100% transparency."
+      />
+      <div className={styles.howItWorks}>
+        {/* Hero Header */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <h1 className={styles.title}>How to Help</h1>
@@ -99,7 +105,8 @@ function HowItWorks() {
           </div>
         </section>
       </div>
-    </div>
+      </div>
+    </>
   )
 }
 
