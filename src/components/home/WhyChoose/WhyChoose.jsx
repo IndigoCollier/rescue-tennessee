@@ -46,7 +46,12 @@ function WhyChoose() {
 
         <div className={styles.reasonsList}>
           {reasons.map((reason, index) => (
-            <div key={index} className={styles.reasonItem}>
+            <div
+              key={index}
+              className={styles.reasonItem}
+              data-aos="fade-up"
+              data-aos-delay={index * 150}
+            >
               <div className={styles.iconWrapper}>
                 <reason.icon className={styles.icon} />
               </div>

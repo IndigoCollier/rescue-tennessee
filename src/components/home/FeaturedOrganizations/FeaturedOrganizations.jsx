@@ -56,8 +56,13 @@ function FeaturedOrganizations() {
         <h2 className={styles.sectionTitle}>Featured Rescue Organizations</h2>
 
         <div className={styles.orgList}>
-          {featuredOrgs.map((org) => (
-            <div key={org.id} className={styles.orgCard}>
+          {featuredOrgs.map((org, index) => (
+            <div
+              key={org.id}
+              className={styles.orgCard}
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
               {/* Organization Logo */}
               <div className={styles.imageWrapper}>
                 <img

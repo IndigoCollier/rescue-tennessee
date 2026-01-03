@@ -33,10 +33,15 @@ function HowItWorks() {
         <section className={styles.statsSection}>
           <h2 className={styles.sectionTitle}>Our Impact</h2>
           <div className={styles.statsGrid}>
-            {stats.map((stat) => {
+            {stats.map((stat, index) => {
               const Icon = stat.icon
               return (
-                <div key={stat.label} className={styles.statCard}>
+                <div
+                  key={stat.label}
+                  className={styles.statCard}
+                  data-aos="zoom-in"
+                  data-aos-delay={index * 100}
+                >
                   <Icon className={styles.statIcon} size={40} />
                   <div className={styles.statNumber}>{stat.number}</div>
                   <div className={styles.statLabel}>{stat.label}</div>
@@ -50,21 +55,21 @@ function HowItWorks() {
         <section className={styles.howSection}>
           <h2 className={styles.sectionTitle}>How Rescue Tennessee Works</h2>
           <div className={styles.howGrid}>
-            <div className={styles.howCard}>
+            <div className={styles.howCard} data-aos="fade-up" data-aos-delay="0">
               <div className={styles.howNumber}>1</div>
               <h3 className={styles.howTitle}>Discover</h3>
               <p className={styles.howText}>
                 Browse verified rescue organizations across Tennessee with detailed profiles and mission stories.
               </p>
             </div>
-            <div className={styles.howCard}>
+            <div className={styles.howCard} data-aos="fade-up" data-aos-delay="100">
               <div className={styles.howNumber}>2</div>
               <h3 className={styles.howTitle}>Learn</h3>
               <p className={styles.howText}>
                 Read about each organization's specializations, impact, and the dogs they help every day.
               </p>
             </div>
-            <div className={styles.howCard}>
+            <div className={styles.howCard} data-aos="fade-up" data-aos-delay="200">
               <div className={styles.howNumber}>3</div>
               <h3 className={styles.howTitle}>Support</h3>
               <p className={styles.howText}>

@@ -24,7 +24,11 @@ function OrganizationCard({ organization }) {
   }
 
   return (
-    <Link to={`/organizations/${id}`} className={styles.orgCardLink}>
+    <Link
+      to={`/organizations/${id}`}
+      className={styles.orgCardLink}
+      data-aos="fade-up"
+    >
       <div className={styles.orgCard}>
         {/* Image/Logo Section */}
         <div className={styles.imageWrapper}>

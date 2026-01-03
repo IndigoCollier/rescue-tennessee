@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import { AppProvider } from './context/AppContext'
 import { OrganizationProvider } from './context/OrganizationContext'
 import { SearchProvider } from './context/SearchContext'
@@ -12,6 +14,14 @@ import HowItWorks from './pages/HowItWorks'
 import Contact from './pages/Contact'
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-out'
+    })
+  }, [])
+
   return (
     <AppProvider>
       <OrganizationProvider>

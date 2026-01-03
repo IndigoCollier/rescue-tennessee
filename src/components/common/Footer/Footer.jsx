@@ -10,10 +10,10 @@ function Footer() {
       <div className={styles.container}>
         {/* Brand Section */}
         <div className={styles.section}>
-          <div className={styles.brand}>
+          <Link to="/" className={styles.brand}>
             <img src={logo} alt="Rescue Tennessee" className={styles.logoImage} />
             <h3>Rescue Tennessee</h3>
-          </div>
+          </Link>
           <p className={styles.tagline}>
             Connecting paws to people across Tennessee.
             Every click helps rescue dogs find their forever homes.

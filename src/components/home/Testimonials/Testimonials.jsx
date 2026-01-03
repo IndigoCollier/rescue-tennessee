@@ -59,7 +59,10 @@ function Testimonials() {
           Hear from people who have supported Tennessee rescue organizations
         </p>
 
-        <div className={`${styles.testimonialCard} ${fadeClass}`}>
+        <div
+          className={`${styles.testimonialCard} ${fadeClass}`}
+          data-aos="fade-in"
+        >
           <Quote className={styles.quoteIcon} size={48} />
           <p className={styles.quote}>{currentTestimonial.quote}</p>
           <div className={styles.author}>
