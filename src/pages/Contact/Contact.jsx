@@ -68,24 +68,35 @@ function Contact() {
       return
     }
 
-    // Simulate form submission (replace with actual email service later)
+    // Formspree endpoint for Rescue Tennessee contact form
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpqplrkv'
+
     try {
       setSubmitStatus('loading')
 
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500))
-
-      setSubmitStatus('success')
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       })
 
-      // Clear success message after 5 seconds
-      setTimeout(() => setSubmitStatus(null), 5000)
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        })
+        // Clear success message after 5 seconds
+        setTimeout(() => setSubmitStatus(null), 5000)
+      } else {
+        throw new Error('Form submission failed')
+      }
     } catch (error) {
+      console.error('Form submission error:', error)
       setSubmitStatus('error')
       setTimeout(() => setSubmitStatus(null), 5000)
     }

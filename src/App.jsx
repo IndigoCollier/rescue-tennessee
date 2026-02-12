@@ -6,6 +6,7 @@ import { AppProvider } from './context/AppContext'
 import { OrganizationProvider } from './context/OrganizationContext'
 import { SearchProvider } from './context/SearchContext'
 import Layout from './components/common/Layout'
+import ScrollToTop from './components/common/ScrollToTop'
 import Home from './pages/Home'
 import Organizations from './pages/Organizations'
 import OrganizationDetail from './pages/OrganizationDetail'
@@ -27,6 +28,7 @@ function App() {
       <OrganizationProvider>
         <SearchProvider>
           <Router>
+            <ScrollToTop />
             <Layout>
               <Routes>
                 <Route path="/" element={<Home />} />
