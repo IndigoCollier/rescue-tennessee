@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Button from '../../common/Button'
 import styles from './HeroSection.module.css'
@@ -11,6 +11,16 @@ import heroVideo from '../../../assets/videos/hero-video.mp4'
  */
 function HeroSection() {
   const navigate = useNavigate()
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (video) {
+      video.muted = true
+      video.playsInline = true
+      video.play().catch(() => {})
+    }
+  }, [])
 
   const handleFindOrganizations = () => {
     navigate('/organizations')
@@ -22,6 +32,7 @@ function HeroSection() {
       <div className={styles.heroBackground}>
         <div className={styles.overlay} />
         <video
+          ref={videoRef}
           className={styles.heroVideo}
           autoPlay
           loop
