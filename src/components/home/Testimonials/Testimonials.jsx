@@ -38,7 +38,7 @@ function Testimonials() {
           prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
         )
         setFadeClass(styles.fadeIn)
-      }, 500)
+      }, 200)
     }, 5000)
 
     return () => clearInterval(interval)
@@ -61,7 +61,6 @@ function Testimonials() {
 
         <div
           className={`${styles.testimonialCard} ${fadeClass}`}
-          data-aos="fade-in"
         >
           <Quote className={styles.quoteIcon} size={48} />
           <p className={styles.quote}>{currentTestimonial.quote}</p>
@@ -82,7 +81,7 @@ function Testimonials() {
                 setTimeout(() => {
                   setCurrentIndex(index)
                   setFadeClass(styles.fadeIn)
-                }, 500)
+                }, 200)
               }}
               aria-label={`Go to testimonial ${index + 1}`}
             />
